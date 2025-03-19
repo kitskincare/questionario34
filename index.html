@@ -16,6 +16,8 @@
       background-image: url('imagens/fundo.jpg');
       background-size: cover;
       background-attachment: fixed;
+      background-position: center; /* Fundo centralizado */
+      background-repeat: no-repeat;
       overflow-y: auto;
       transition: background 0.5s ease-in-out;
     }
@@ -268,6 +270,8 @@
       } else if (pageNum === 7) {
         document.body.style.backgroundImage = "none";
         document.body.style.backgroundColor = "black";
+      } else if (pageNum === 8) {
+        // Para a página 8, a centralização já ocorre pelo CSS (background-position: center)
       }
     }
 
@@ -393,7 +397,7 @@
       "oleosa": {
         "acne": { buttonText: "KIT SKINCARE PELE OLEOSA/ACNE", url: "https://www.bioage.com.br/professional/cart/create?code=c9c716fee63cf4", bg: "imagens/fundo12.jpg", pdf: "pdf/oleosa_acne.pdf" },
         "oleosidade": { buttonText: "KIT SKINCARE PELE OLEOSA/OLEOSIDADE", url: "https://www.bioage.com.br/professional/cart/create?code=ca378940a8b552", bg: "imagens/fundo13.jpg", pdf: "pdf/oleosa_oleosidade.pdf" },
-        "rugas": { buttonText: "KIT SKINCARE PELE OLEOSA/RUGAS", url: "https://www.bioage.com.br/professional/cart/create?code=cf96738128ecad", bg: "imagens/fundo32.jpg", pdf: "pdf/oleosa_rugas.pdf" },
+        "rugas": { buttonText: "KIT SKINCARE PELE OLEOSA/RUGAS", url: "https://www.bioage.com.br/professional/cart/create?code=cf96738128ecad", bg: "imagens/fundo13.jpg", pdf: "pdf/oleosa_rugas.pdf" },
         "manchas": { buttonText: "KIT SKINCARE PELE OLEOSA/MANCHAS", url: "https://www.bioage.com.br/professional/cart/create?code=c0a6edd71b61fb", bg: "imagens/fundo11.jpg", pdf: "pdf/oleosa_manchas.pdf" },
         "poros": { buttonText: "KIT SKINCARE PELE OLEOSA/POROS DILATADOS", url: "https://www.bioage.com.br/professional/cart/create?code=caeea137bf61a5", bg: "imagens/fundo14.jpg", pdf: "pdf/oleosa_poros.pdf" },
         "textura": { buttonText: "KIT SKINCARE PELE OLEOSA/TEXTURA IRREGULAR", url: "https://www.bioage.com.br/professional/cart/create?code=cef863bc962f6d", bg: "imagens/fundo15.jpg", pdf: "pdf/oleosa_textura.pdf" },
@@ -443,6 +447,7 @@
       // Define o fundo da página 8 conforme o resultado
       document.body.style.backgroundImage = "url('" + result.bg + "')";
       document.body.style.backgroundColor = "";
+      // A centralização do fundo já ocorre via CSS (background-position: center)
       const kitLink = document.getElementById('kitLink');
       kitLink.innerText = result.buttonText;
       kitLink.href = result.url;
