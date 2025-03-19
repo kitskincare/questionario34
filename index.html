@@ -16,7 +16,7 @@
       background-image: url('imagens/fundo.jpg');
       background-size: cover;
       background-attachment: fixed;
-      background-position: center; /* Fundo centralizado */
+      background-position: center; /* Tenta centralizar o fundo */
       background-repeat: no-repeat;
       overflow-y: auto;
       transition: background 0.5s ease-in-out;
@@ -270,8 +270,6 @@
       } else if (pageNum === 7) {
         document.body.style.backgroundImage = "none";
         document.body.style.backgroundColor = "black";
-      } else if (pageNum === 8) {
-        // Para a página 8, a centralização já ocorre pelo CSS (background-position: center)
       }
     }
 
@@ -447,15 +445,22 @@
       // Define o fundo da página 8 conforme o resultado
       document.body.style.backgroundImage = "url('" + result.bg + "')";
       document.body.style.backgroundColor = "";
-      // A centralização do fundo já ocorre via CSS (background-position: center)
+      // Força a centralização do fundo
+      document.body.style.backgroundPosition = "center center";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundSize = "cover";
+      
       const kitLink = document.getElementById('kitLink');
       kitLink.innerText = result.buttonText;
       kitLink.href = result.url;
+      
       // Atualiza o link para baixar o manual (PDF)
       const manualLink = document.getElementById('manualLink');
       manualLink.href = result.pdf;
+      
       showPage(8);
     }
   </script>
 </body>
 </html>
+
